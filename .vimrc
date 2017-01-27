@@ -26,7 +26,11 @@ execute pathogen#infect()
 	autocmd GUIEnter * set visualbell t_vb=
 
 if has("gui_running")
-	set guifont=Consolas:h9:cANSI:qDRAFT
+	if has("gui_win32")
+		set guifont=Consolas:h9:cANSI:qDRAFT
+	else
+		set guifont=Inconsolata\ 9
+	endif
 	set lines=50 columns=120
 	set guioptions-=m  "remove menu bar
 	set guioptions-=T  "remove toolbar
